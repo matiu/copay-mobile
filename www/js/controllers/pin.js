@@ -57,7 +57,6 @@ angular.module('copay.controllers')
     Identity.openProfile(credentials, function(err, identity, wallet) {
       $ionicLoading.hide();
       if (err) return onInvalidPin();
-
       Session.signin(identity);
 
       if ($stateParams.data) {

@@ -51,5 +51,9 @@ angular.module('copay.services')
     return wallet;
   }
 
+  Wallets.getLastFocused = function(id) {
+    return Session.identity.getLastFocusedWallet();
+  }
+
   return Wallets;
 });

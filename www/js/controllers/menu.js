@@ -82,8 +82,7 @@ angular.module('copay.controllers')
 
   // Inexistent Wallet, redirect to default one
   if (!$scope.wallet) {
-    var defualtWallet = Wallets.all()[0]; // TODO: Use last opened wallet
-    return $state.go('profile.wallet.home', {walletId: defualtWallet.id});
+    $scope.wallet = Wallets.getLastFocused();
   }
 
 
