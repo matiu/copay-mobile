@@ -187,7 +187,7 @@ angular.module('copay')
 
     // If not logged redirect to home
     var isPrivate = !!(toState.data && toState.data.auth);
-    if (!Session.isLogged() && !Session.hasCredentials() && isPrivate) {
+    if (!Session.isLogged() && !Session.hasCredentials() && !isPrivate && toState.name != 'start.welcome') {
       event.preventDefault();
       return $state.go('start.welcome');
     }
